@@ -1,6 +1,6 @@
 import ListItemCheckBox from "./ListItemCheckBox";
-
-const ListItem = () => {
+import "./ListItem.css";
+const ListItem = (props) => {
     return (
         <li>{props.value}
             <ListItemCheckBox></ListItemCheckBox>

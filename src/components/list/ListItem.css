@@ -1,0 +1,26 @@
+li {
+    background-color: #2E4F4F;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#add-list-item {
+    border: 4px dashed #CBE4DE;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    background: none;
+    color: white;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+
+    border-radius: 50%;
+}

@@ -1,0 +1,27 @@
+form {
+    padding: 2rem;
+}
+
+button {
+    display: block;
+}
+
+form>button {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+form button:nth-child(2) {
+    background-color: #0E8388;
+    color: inherit;
+}
+
+form button:nth-child(3) {
+    background-color: #CBE4DE;
+    color: #424B4B;
+}

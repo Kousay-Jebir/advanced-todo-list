@@ -1,13 +1,18 @@
 import ListItem from "./ListItem";
+import "./List.css";
 
 const List = () => {
     return (
         <ul>
-            <h1>To do list</h1>
+            <h1 style={{ textAlign: 'center', fontWeight: 'bold' }}>To do list</h1>
             <ListItem value="Task 1"></ListItem>
             <ListItem value="Task 2"></ListItem>
             <ListItem value="Task 3"></ListItem>
-            <TODO>Button for adding new task</TODO>
+            <button id="add-list-item">
+
+                Add a new task
+            </button>
+
         </ul>
     )
 }
