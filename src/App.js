@@ -2,6 +2,7 @@ import TaskForm from "./components/list-section/TaskForm";
 import { useState } from "react";
 import toDoTasksContext from "./contexts/toDoTasksContext";
 import "./index.css";
+import DashBoardContainer from "./components/dashboard-section/DashBoardContainer";
 function App() {
   //dummy tasks
   const [toDoTasks, setToDoTasks] = useState([
@@ -13,6 +14,7 @@ function App() {
     <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks }}>
       <div className="App">
         <TaskForm></TaskForm>
+        <DashBoardContainer></DashBoardContainer>
       </div>
     </toDoTasksContext.Provider>
   );

@@ -47,6 +47,6 @@ button {
 .App {
 
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-
+  grid-template-columns: auto;
+  justify-items: center;
 }

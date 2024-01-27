@@ -1,0 +1,57 @@
+#profile-section-container {
+    background-color: #323939;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    max-width: 600px;
+}
+
+section>header>img {
+    display: block;
+    aspect-ratio: 1;
+    width: 100px;
+    border-radius: 1.5rem;
+}
+
+#profile-section-container>section>header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#profile-info {
+    background-color: #3A4242;
+    border-radius: 1.5rem;
+    padding: 1rem;
+
+
+}
+
+#profile-info>h1 {
+    color: #2dffff;
+    font-weight: bold;
+
+
+}
+
+#profile-section-container p {
+    background-color: #3A4242;
+    padding: 1.2rem;
+    border-radius: 1.5rem;
+    text-align: justify;
+    margin: 1rem 0;
+}
+
+#profile-section-buttons {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+}
+
+#profile-section-buttons>button {
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

@@ -1,0 +1,24 @@
+#graph-section-container {
+    background-color: #3A4242;
+    border-radius: 1.5rem;
+
+
+}
+
+#graph-section-container>h1 {
+    text-align: center;
+    font-weight: bold;
+    background: #2E4F4F;
+    border-radius: 1rem;
+    padding-block: 0.7rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+#graph-container {
+    display: flex;
+    min-height: 250px;
+    align-items: end;
+    justify-content: space-between;
+
+}
