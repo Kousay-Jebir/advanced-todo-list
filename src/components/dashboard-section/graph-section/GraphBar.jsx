@@ -4,7 +4,7 @@ const GraphBar = ({ barHeight }) => {
         <div className="graph-bar" style={{
             backgroundColor: "#CBE4DE",
             height: `${barHeight}px`,
-            width: "50px"
+            width: "10%"
         }} ></div>
     )
 }

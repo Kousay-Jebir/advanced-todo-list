@@ -10,6 +10,8 @@ function App() {
     { value: "Task 2 ", isChecked: false },
     { value: "Task 3 ", isChecked: false }
   ]);
+
+  console.log(localStorage);
   return (
     <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks }}>
       <div className="App">
