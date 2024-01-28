@@ -5,6 +5,7 @@ const ListItemCheckBox = (props) => {
     const tasks = useContext(toDoTasksContext);
     const taskIndex = props.taskIndex;
     function checkBoxHandler(event) {
+        event.preventDefault();
         tasks.setToDoTasks((prevTasks) => {
             const newTasks = [...prevTasks];
             newTasks[taskIndex] = { ...newTasks[taskIndex], isChecked: event.target.checked };
@@ -16,3 +17,4 @@ const ListItemCheckBox = (props) => {
     )
 }
 export default ListItemCheckBox;
+
