@@ -21,18 +21,18 @@ function App() {
   ]);
   const [counter, setCounter] = useState(0);
   const [overlayActive, setOverlayActive] = useState(isNewUser());
-
+  const [makeNewProfile, setMakeNewProfile] = useState(false);
   const toggleOverlay = () => {
     setOverlayActive(!overlayActive);
   };
   return (
     <UserDataProvider>
-      <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter }}>
+      <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter, setMakeNewProfile, setOverlayActive }}>
         <div className="App">
           {overlayActive ? <div className="overlay"></div> : null}
           <TaskForm></TaskForm>
           <DashBoardContainer></DashBoardContainer>
-          {isNewUser() ? <NewUser overlay={toggleOverlay}></NewUser> : null}
+          {(isNewUser() || makeNewProfile) ? <NewUser overlay={toggleOverlay}></NewUser> : null}
         </div>
       </toDoTasksContext.Provider>
     </UserDataProvider>

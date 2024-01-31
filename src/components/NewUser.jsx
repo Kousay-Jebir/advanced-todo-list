@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import "./NewUser.css";
 import toDoTasksContext from "../contexts/toDoTasksContext";
 import UserDataProvider from "./UserDataProvider";
+import { logOutCurrentUser, loggedInUser } from "../userData";
 const NewUser = (props) => {
-
+    const { setMakeNewProfile } = useContext(toDoTasksContext);
     const [profileImage, setProfileImage] = useState("/profilepic.jpg");
     const [profileName, setProfileName] = useState("");
     const newProfile = { profileName, profileImage, isLoggedIn: true, toDoLists: [] };
@@ -36,6 +37,7 @@ const NewUser = (props) => {
         // Save the updated array back to sessionStorage
         sessionStorage.setItem('profiles', JSON.stringify(existingProfiles));
         props.overlay();
+        setMakeNewProfile(false);
 
 
     };

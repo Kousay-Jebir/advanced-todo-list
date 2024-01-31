@@ -4,10 +4,15 @@ import ProfileCard from "./profile-section/ProfileCard";
 import "./graph-section/GraphCard.css"
 import { useState } from "react";
 import NewUser from "../NewUser";
+import { useContext } from "react";
+import toDoTasksContext from "../../contexts/toDoTasksContext";
+import { logOutCurrentUser } from "../../userData";
 const DashBoardContainer = () => {
-
+    const { setOverlayActive, setMakeNewProfile } = useContext(toDoTasksContext);
     function newProfileHandler() {
-
+        setOverlayActive(true);
+        setMakeNewProfile(true);
+        logOutCurrentUser();
 
     }
     return (

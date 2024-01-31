@@ -7,3 +7,9 @@ export const loggedInUser = () => {
 
     }
 } //returns index of logged in user
+
+export const logOutCurrentUser = () => {
+    const profiles = JSON.parse(sessionStorage.getItem("profiles"));
+    profiles[loggedInUser()].isLoggedIn = false;
+    sessionStorage.setItem('profiles', JSON.stringify(profiles));
+}
