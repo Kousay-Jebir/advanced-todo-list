@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import "./NewUser.css";
+import toDoTasksContext from "../contexts/toDoTasksContext";
+import UserDataProvider from "./UserDataProvider";
 const NewUser = (props) => {
 
-    const [profileImage, setProfileImage] = useState("https://cdn2.iconfinder.com/data/icons/user-people-4/48/6-512.png");
+    const [profileImage, setProfileImage] = useState("/profilepic.jpg");
     const [profileName, setProfileName] = useState("");
-    const newProfile = { profileName, profileImage };
+    const newProfile = { profileName, profileImage, isLoggedIn: true, toDoLists: [] };
     const profileImageInputRef = useRef(null);
 
     const handleImageChange = (e) => {
@@ -39,6 +41,7 @@ const NewUser = (props) => {
     };
 
     return (
+
         <div id="new-user-ui-container">
             <form id="new-user-ui" onSubmit={handleSubmit} >
                 <img id="profile-image" src={profileImage} alt="Profile Picture Preview"></img>
@@ -53,6 +56,7 @@ const NewUser = (props) => {
 
             </form >
         </div>
+
     )
 }
 export default NewUser;

@@ -4,11 +4,12 @@ import toDoTasksContext from "./contexts/toDoTasksContext";
 import "./index.css";
 import DashBoardContainer from "./components/dashboard-section/DashBoardContainer";
 import NewUser from "./components/NewUser";
+import UserDataProvider from "./components/UserDataProvider";
 function App() {
   console.log(sessionStorage);
   function isNewUser() {
     if (sessionStorage.getItem('profiles') == null) {
-      console.log("ture")
+
       return (true);
     }
   }
@@ -19,20 +20,22 @@ function App() {
     { value: "Task 3 ", isChecked: false }
   ]);
   const [counter, setCounter] = useState(0);
-  const [overlayActive, setOverlayActive] = useState(true);
+  const [overlayActive, setOverlayActive] = useState(isNewUser());
 
   const toggleOverlay = () => {
     setOverlayActive(!overlayActive);
   };
   return (
-    <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter }}>
-      <div className="App">
-        {overlayActive ? <div className="overlay"></div> : null}
-        <TaskForm></TaskForm>
-        <DashBoardContainer></DashBoardContainer>
-        {isNewUser() ? <NewUser overlay={toggleOverlay}></NewUser> : null}
-      </div>
-    </toDoTasksContext.Provider>
+    <UserDataProvider>
+      <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter }}>
+        <div className="App">
+          {overlayActive ? <div className="overlay"></div> : null}
+          <TaskForm></TaskForm>
+          <DashBoardContainer></DashBoardContainer>
+          {isNewUser() ? <NewUser overlay={toggleOverlay}></NewUser> : null}
+        </div>
+      </toDoTasksContext.Provider>
+    </UserDataProvider>
   );
 }
 
