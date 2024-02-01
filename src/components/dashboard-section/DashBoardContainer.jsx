@@ -43,7 +43,7 @@ const DashBoardContainer = () => {
                 {isManageProfilesActive ? <Profiles></Profiles> : null}
             </div>
             <div id="graph-section-container">
-                <h1>Weekly performance</h1>
+                <h1 style={{ marginBottom: '1rem' }}>Weekly performance</h1>
                 <Graph></Graph>
             </div>
         </section>

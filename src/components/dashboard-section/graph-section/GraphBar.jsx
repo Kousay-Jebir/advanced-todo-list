@@ -1,10 +1,12 @@
 import "./GraphCard.css"
 const GraphBar = ({ barHeight }) => {
     return (
-        <div className="graph-bar" style={{
+        <div data-barHeight={`${(barHeight / 250) * 100}%`} className="graph-bar" style={{
             backgroundColor: "#CBE4DE",
             height: `${barHeight}px`,
-            width: "10%"
+            width: "10%",
+            WebkitBorderTopLeftRadius: '1rem',
+            WebkitBorderTopRightRadius: '1rem',
         }} ></div>
     )
 }

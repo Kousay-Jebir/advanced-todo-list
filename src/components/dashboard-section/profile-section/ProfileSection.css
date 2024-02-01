@@ -14,7 +14,10 @@ section>header>img {
 
 #profile-section-container>section>header {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 
 }
 
@@ -43,6 +46,8 @@ section>header>img {
 
 #profile-section-buttons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
