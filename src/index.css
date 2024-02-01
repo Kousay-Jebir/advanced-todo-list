@@ -68,3 +68,7 @@ button {
   grid-template-columns: auto;
   justify-items: center;
 }
+
+.noScroll {
+  overflow: hidden;
+}

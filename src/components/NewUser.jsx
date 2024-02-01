@@ -38,6 +38,7 @@ const NewUser = (props) => {
         sessionStorage.setItem('profiles', JSON.stringify(existingProfiles));
         props.overlay();
         setMakeNewProfile(false);
+        document.body.classList.remove("noScroll");
 
 
     };

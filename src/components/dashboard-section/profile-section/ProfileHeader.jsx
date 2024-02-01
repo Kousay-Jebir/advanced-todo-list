@@ -1,21 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import userDataContext from "../../../contexts/userDataContext";
+import { loggedInUser } from "../../../userData";
+import toDoTasksContext from "../../../contexts/toDoTasksContext";
+import SubmissionTimer from "./SubmissionTimer";
 
 const ProfileHeader = () => {
-    const userprofiles = useContext(userDataContext)
-    const profilesString = sessionStorage.getItem('profiles');
-
-    // Parse the profiles string into an array of profile objects
-    const profiles = JSON.parse(profilesString);
+    const { selectedProfile, profiles } = useContext(toDoTasksContext);
 
     return (
         <header>
-            <img src={sessionStorage.getItem('profiles') == null ? "#" : profiles[0].profileImage} alt="profile-picture" />
+            <img src={sessionStorage.getItem('profiles') == null ? "#" : profiles[loggedInUser()].profileImage} alt="profile-picture" />
             <div id="profile-info">
-                <h1>{sessionStorage.getItem('profiles') == null ? "profile name" : profiles[0].profileName}</h1>
+                <h1>{sessionStorage.getItem('profiles') == null ? "profile name" : profiles[loggedInUser()].profileName}</h1>
                 <div id="profile-id">#0012</div>
-                <button type="button">Profile settings</button>
+                <button id='profile-settings' type="button">Profile settings</button>
             </div>
+            <SubmissionTimer></SubmissionTimer>
         </header>
     )
 }
