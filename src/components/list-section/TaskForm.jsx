@@ -9,7 +9,7 @@ const TaskForm = () => {
 
     }
     function submitHandler(event) {
-        if (canUserSubmit()) {
+        if (true) {
             event.preventDefault();
             tasks.setCounter((previous) => previous + 1);
             const currentCounter = tasks.counter + 1;

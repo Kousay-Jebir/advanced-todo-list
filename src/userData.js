@@ -29,3 +29,23 @@ export const logInUser = (index) => {
     profiles[index].isLoggedIn = true;
     sessionStorage.setItem('profiles', JSON.stringify(profiles));
 }
+
+
+
+export const generateGraphBarHeight = (i) => {
+    const user = loggedInUser();
+    let userToDoList = (JSON.parse(sessionStorage.getItem('profiles'))[user].toDoLists)[i]
+    console.log(Object.values(userToDoList));
+
+    userToDoList = Object.values(userToDoList)[0];
+    let checkedTasks = 0;
+    const totalTasks = userToDoList.length;
+    console.log(totalTasks);
+    userToDoList.forEach(element => {
+        if (element.isChecked) {
+            checkedTasks++;
+        }
+    });
+    return [checkedTasks, totalTasks];
+
+};

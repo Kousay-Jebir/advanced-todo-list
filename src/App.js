@@ -27,12 +27,13 @@ function App() {
   const [selectedProfile, setSelectedProfile] = useState(null);
   const profiles = JSON.parse(sessionStorage.getItem("profiles"));
   const [isProfileSelected, setIsProfileSelected] = useState(false);
+  const [reEvaluateGraph, setReEvaluateGraph] = useState(false);
   const toggleOverlay = () => {
     setOverlayActive(!overlayActive);
   };
   return (
     <UserDataProvider>
-      <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter, setMakeNewProfile, setOverlayActive, setSelectedProfile, selectedProfile, profiles, isProfileSelected, setIsProfileSelected }}>
+      <toDoTasksContext.Provider value={{ toDoTasks, setToDoTasks, counter, setCounter, setMakeNewProfile, setOverlayActive, setSelectedProfile, selectedProfile, profiles, isProfileSelected, setIsProfileSelected, reEvaluateGraph, setReEvaluateGraph }}>
         <div className="App">
           {overlayActive ? <div className="overlay"></div> : null}
           <TaskForm></TaskForm>

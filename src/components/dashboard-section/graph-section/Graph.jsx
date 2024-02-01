@@ -1,16 +1,23 @@
 import GraphBar from "./GraphBar";
-
+import { generateGraphBarHeight } from "../../../userData";
 const Graph = () => {
     return (
 
         <div id="graph-container">
-            <GraphBar barHeight={1 * 250}></GraphBar>
+            {/* <GraphBar barHeight={1 * 250}></GraphBar>
             <GraphBar barHeight={0.5 * 250}></GraphBar>
             <GraphBar barHeight={0.2 * 250}></GraphBar>
             <GraphBar barHeight={0.75 * 250}></GraphBar>
             <GraphBar barHeight={0.90 * 250}></GraphBar>
             <GraphBar barHeight={0.1 * 250}></GraphBar>
-            <GraphBar barHeight={0.8 * 250}></GraphBar></div>
+            <GraphBar barHeight={0.8 * 250}></GraphBar></div> */}
+            <GraphBar barHeight={(generateGraphBarHeight(0)[0] / generateGraphBarHeight(0)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(1)[0] / generateGraphBarHeight(1)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(2)[0] / generateGraphBarHeight(2)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(3)[0] / generateGraphBarHeight(3)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(4)[0] / generateGraphBarHeight(4)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(5)[0] / generateGraphBarHeight(5)[1]) * 250}></GraphBar>
+            <GraphBar barHeight={(generateGraphBarHeight(6)[0] / generateGraphBarHeight(6)[1]) * 250}></GraphBar></div>
     )
 }
 export default Graph;
