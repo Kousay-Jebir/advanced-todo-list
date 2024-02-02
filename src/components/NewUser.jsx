@@ -73,13 +73,13 @@ const NewUser = (props) => {
         e.preventDefault();
 
         console.log(newProfile);
-        const existingProfiles = JSON.parse(sessionStorage.getItem('profiles')) || [];
+        const existingProfiles = JSON.parse(localStorage.getItem('profiles')) || [];
 
         // Add the new profile to the array
         existingProfiles.push(newProfile);
 
-        // Save the updated array back to sessionStorage
-        sessionStorage.setItem('profiles', JSON.stringify(existingProfiles));
+        // Save the updated array back to localStorage
+        localStorage.setItem('profiles', JSON.stringify(existingProfiles));
         props.overlay();
         setMakeNewProfile(false);
         document.body.classList.remove("noScroll");

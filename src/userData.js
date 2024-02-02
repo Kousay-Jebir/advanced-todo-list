@@ -1,5 +1,5 @@
 export const loggedInUser = () => {
-    const profiles = JSON.parse(sessionStorage.getItem('profiles')) || [];
+    const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
 
     if (profiles.length === 0) {
         // Return 0 when no profiles exist
@@ -19,22 +19,22 @@ export const loggedInUser = () => {
 
 
 export const logOutCurrentUser = () => {
-    const profiles = JSON.parse(sessionStorage.getItem("profiles"));
+    const profiles = JSON.parse(localStorage.getItem("profiles"));
     profiles[loggedInUser()].isLoggedIn = false;
-    sessionStorage.setItem('profiles', JSON.stringify(profiles));
+    localStorage.setItem('profiles', JSON.stringify(profiles));
 }
 
 export const logInUser = (index) => {
-    const profiles = JSON.parse(sessionStorage.getItem("profiles"));
+    const profiles = JSON.parse(localStorage.getItem("profiles"));
     profiles[index].isLoggedIn = true;
-    sessionStorage.setItem('profiles', JSON.stringify(profiles));
+    localStorage.setItem('profiles', JSON.stringify(profiles));
 }
 
 
 
 export const generateGraphBarHeight = (i, disable) => {
     const user = loggedInUser();
-    const userToDoLists = JSON.parse(sessionStorage.getItem('profiles'))[user]?.toDoLists;
+    const userToDoLists = JSON.parse(localStorage.getItem('profiles'))[user]?.toDoLists;
 
     if (!userToDoLists || i < 0 || i >= userToDoLists.length) {
 

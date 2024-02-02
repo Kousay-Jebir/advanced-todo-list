@@ -10,9 +10,8 @@ function App() {
   let loginuser = loggedInUser();
   useEffect(() => { setSelectedProfile(loginuser) }, [loginuser]);
 
-  console.log(sessionStorage);
   function isNewUser() {
-    if (sessionStorage.getItem('profiles') == null) {
+    if (localStorage.getItem('profiles') == null) {
       window.scrollTo(0, 0);
       document.body.classList.add('noScroll');
       return (true);
@@ -28,7 +27,7 @@ function App() {
   const [overlayActive, setOverlayActive] = useState(isNewUser());
   const [makeNewProfile, setMakeNewProfile] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState(null);
-  const profiles = JSON.parse(sessionStorage.getItem("profiles"));
+  const profiles = JSON.parse(localStorage.getItem("profiles"));
   const [isProfileSelected, setIsProfileSelected] = useState(false);
   const [reEvaluateGraph, setReEvaluateGraph] = useState(false);
   const [canUserSubmit, setCanUserSubmit] = useState(true);

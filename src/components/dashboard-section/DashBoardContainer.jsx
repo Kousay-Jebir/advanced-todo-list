@@ -30,7 +30,7 @@ const DashBoardContainer = () => {
     function generateGraphHandler() {
         //check if the user has 7 to Do lists to show his graph
         const user = loggedInUser();
-        let userToDoLists = (JSON.parse(sessionStorage.getItem('profiles'))[user].toDoLists)
+        let userToDoLists = (JSON.parse(localStorage.getItem('profiles'))[user].toDoLists)
         console.log(Object.values(userToDoLists));
         if (userToDoLists.length < 7) {
             window.alert("You need to submit 7 to do tasks");

@@ -9,9 +9,9 @@ const ProfileHeader = () => {
 
     return (
         <header>
-            <img src={sessionStorage.getItem('profiles') == null ? "#" : profiles[loggedInUser()].profileImage} alt="profile-picture" />
+            <img src={localStorage.getItem('profiles') == null ? "#" : profiles[loggedInUser()].profileImage} alt="profile-picture" />
             <div id="profile-info">
-                <h1>{sessionStorage.getItem('profiles') == null ? "profile name" : profiles[loggedInUser()].profileName}</h1>
+                <h1>{localStorage.getItem('profiles') == null ? "profile name" : profiles[loggedInUser()].profileName}</h1>
                 <div id="profile-id">#0012</div>
                 <button id='profile-settings' type="button">Profile settings</button>
             </div>

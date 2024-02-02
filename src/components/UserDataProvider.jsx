@@ -3,7 +3,7 @@ import userDataContext from '../contexts/userDataContext';
 
 const UserDataProvider = ({ children }) => {
     // Get the profiles string from sessionStorage
-    const profilesString = sessionStorage.getItem('profiles');
+    const profilesString = localStorage.getItem('profiles');
 
     // Parse the profiles string into an array of profile objects
     const profiles = JSON.parse(profilesString);

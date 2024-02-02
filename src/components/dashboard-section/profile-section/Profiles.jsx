@@ -8,7 +8,7 @@ const Profiles = () => {
 
     const getProfiles = () => {
         return (
-            JSON.parse(sessionStorage.getItem('profiles'))
+            JSON.parse(localStorage.getItem('profiles'))
         )
     };
     const sendIndex = (selectedProfile) => {

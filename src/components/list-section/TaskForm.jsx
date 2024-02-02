@@ -11,8 +11,8 @@ const TaskForm = () => {
     useEffect(() => {
         setCanSubmit(true);
         // Check if 24 hours have passed since the last submission
-        // const lastSubmissionTime = sessionStorage.getItem('lastSubmissionTime');
-        const profilesData = JSON.parse(sessionStorage.getItem('profiles')) || [];
+        // const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+        const profilesData = JSON.parse(localStorage.getItem('profiles')) || [];
         const lastSubmitTime = profilesData[loggedInUser()]?.lastSubmissionTime || null;
         console.log("effect is ran");
 
@@ -40,7 +40,7 @@ const TaskForm = () => {
             const loggedUser = loggedInUser();
 
             // Retrieve the profiles array from sessionStorage
-            const profiles = JSON.parse(sessionStorage.getItem("profiles"));
+            const profiles = JSON.parse(localStorage.getItem("profiles"));
 
             // Ensure that the profiles array exists
             if (profiles && profiles.length > loggedUser) {
@@ -58,13 +58,13 @@ const TaskForm = () => {
                 profiles[loggedUser] = user;
 
                 // Store the updated profiles array back in sessionStorage
-                sessionStorage.setItem('profiles', JSON.stringify(profiles));
+                localStorage.setItem('profiles', JSON.stringify(profiles));
 
                 // Save the current time as the last submission time
                 const currentTime = new Date().getTime();
-                const currentProfiles = JSON.parse(sessionStorage.getItem("profiles"));
+                const currentProfiles = JSON.parse(localStorage.getItem("profiles"));
                 currentProfiles[loggedInUser()].lastSubmissionTime = currentTime.toString();
-                sessionStorage.setItem('profiles', JSON.stringify(currentProfiles));
+                localStorage.setItem('profiles', JSON.stringify(currentProfiles));
                 // Disable submission for 24 hours
                 setCanSubmit(false);
             } else {
