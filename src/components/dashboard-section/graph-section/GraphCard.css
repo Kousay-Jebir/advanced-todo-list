@@ -24,7 +24,7 @@
 }
 
 .graph-bar::after {
-    content: attr(data-barHeight);
+    content: attr(data-barheight);
     color: #D9D9D9;
     position: relative;
     top: 100%;

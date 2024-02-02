@@ -32,20 +32,35 @@ export const logInUser = (index) => {
 
 
 
-export const generateGraphBarHeight = (i) => {
+export const generateGraphBarHeight = (i, disable) => {
     const user = loggedInUser();
-    let userToDoList = (JSON.parse(sessionStorage.getItem('profiles'))[user].toDoLists)[i]
+    const userToDoLists = JSON.parse(sessionStorage.getItem('profiles'))[user]?.toDoLists;
+
+    if (!userToDoLists || i < 0 || i >= userToDoLists.length) {
+
+        disable(false);
+        return [0, 0];
+    }
+
+    const userToDoList = Object.values(userToDoLists[i])[0];
+
+    if (!userToDoList) {
+
+        disable(false);
+        return [0, 0];
+    }
+
     console.log(Object.values(userToDoList));
 
-    userToDoList = Object.values(userToDoList)[0];
     let checkedTasks = 0;
     const totalTasks = userToDoList.length;
     console.log(totalTasks);
+
     userToDoList.forEach(element => {
         if (element.isChecked) {
             checkedTasks++;
         }
     });
-    return [checkedTasks, totalTasks];
 
+    return [checkedTasks, totalTasks];
 };

@@ -4,3 +4,14 @@
     border-radius: 1.5rem;
 
 }
+
+.generate-graph {
+    margin: auto;
+    background-color: rgb(217, 217, 217);
+    color: rgb(66, 75, 75);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+}

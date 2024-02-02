@@ -8,8 +8,10 @@ import { useContext } from "react";
 import toDoTasksContext from "../../contexts/toDoTasksContext";
 import { logOutCurrentUser } from "../../userData";
 import Profiles from "./profile-section/Profiles";
+import { loggedInUser } from "../../userData";
 const DashBoardContainer = () => {
     const { setOverlayActive, setMakeNewProfile, setSelectedProfile, setIsProfileSelected } = useContext(toDoTasksContext);
+    const [generateGraph, setGenerateGraph] = useState(false);
     const [isManageProfilesActive, setIsManageProfileActive] = useState(false);
     function newProfileHandler() {
 
@@ -24,6 +26,18 @@ const DashBoardContainer = () => {
     function manageProfilesHandler() {
         setIsManageProfileActive(true);
         setIsProfileSelected(false);
+    }
+    function generateGraphHandler() {
+        //check if the user has 7 to Do lists to show his graph
+        const user = loggedInUser();
+        let userToDoLists = (JSON.parse(sessionStorage.getItem('profiles'))[user].toDoLists)
+        console.log(Object.values(userToDoLists));
+        if (userToDoLists.length < 7) {
+            window.alert("You need to submit 7 to do tasks");
+        }
+        else {
+            setGenerateGraph(true);
+        }
     }
     return (
         <section id="dashboard-section-container">
@@ -44,7 +58,9 @@ const DashBoardContainer = () => {
             </div>
             <div id="graph-section-container">
                 <h1 style={{ marginBottom: '1rem' }}>Weekly performance</h1>
-                <Graph></Graph>
+                <button className="generate-graph" onClick={generateGraphHandler}>Generate Graph</button>
+                {generateGraph ? <Graph generate={setGenerateGraph} ></Graph> : null}
+
             </div>
         </section>
     )

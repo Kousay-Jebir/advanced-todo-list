@@ -1,5 +1,5 @@
 import TaskForm from "./components/list-section/TaskForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toDoTasksContext from "./contexts/toDoTasksContext";
 import "./index.css";
 import DashBoardContainer from "./components/dashboard-section/DashBoardContainer";
@@ -7,6 +7,9 @@ import NewUser from "./components/NewUser";
 import UserDataProvider from "./components/UserDataProvider";
 import { loggedInUser } from "./userData";
 function App() {
+  let loginuser = loggedInUser();
+  useEffect(() => { setSelectedProfile(loginuser) }, [loginuser]);
+
   console.log(sessionStorage);
   function isNewUser() {
     if (sessionStorage.getItem('profiles') == null) {
@@ -28,6 +31,7 @@ function App() {
   const profiles = JSON.parse(sessionStorage.getItem("profiles"));
   const [isProfileSelected, setIsProfileSelected] = useState(false);
   const [reEvaluateGraph, setReEvaluateGraph] = useState(false);
+  const [canUserSubmit, setCanUserSubmit] = useState(true);
   const toggleOverlay = () => {
     setOverlayActive(!overlayActive);
   };
