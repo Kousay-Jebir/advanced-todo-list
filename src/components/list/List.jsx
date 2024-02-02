@@ -6,8 +6,9 @@ import { useEffect } from "react";
 
 const List = (props) => {
     const tasks = useContext(toDoTasksContext) //tasks object
-    useEffect(() => { console.log(tasks.toDoTasks) }, [tasks.toDoTasks]); //for debugging purpose
-    function addListItemHandler() {
+    // useEffect(() => { console.log(tasks.toDoTasks) }, [tasks.toDoTasks]); //for debugging purpose
+    function addListItemHandler(event) {
+        event.preventDefault();
         const newTasks = [...tasks.toDoTasks, { value: "", isChecked: false }];
         tasks.setToDoTasks(newTasks);
     }

@@ -19,6 +19,13 @@
     display: flex;
     min-height: 250px;
     align-items: end;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
+}
+
+.graph-bar::after {
+    content: attr(data-barheight);
+    color: #D9D9D9;
+    position: relative;
+    top: 100%;
 }

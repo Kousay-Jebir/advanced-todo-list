@@ -1,0 +1,62 @@
+.mini-profile img {
+    aspect-ratio: 1;
+    width: 100px;
+    border-radius: 1.5rem;
+}
+
+.mini-profile {
+    background-color: #133232;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: fit-content;
+    padding-block-end: 0.5rem;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+button[class="mini-profile"] {
+    position: relative;
+    overflow: hidden;
+    /* Ensure the overlay doesn't overflow */
+}
+
+button[class="mini-profile"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #133232a8;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+button[class="mini-profile"]:hover::after,
+button[class="mini-profile"]:active::after {
+    opacity: 1;
+    /* Make the overlay visible on hover and click */
+}
+
+/* Flash effect animation */
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+button[class="mini-profile"]:active {
+    animation: flash 0.5s ease;
+    /* Apply the flash animation on click */
+}

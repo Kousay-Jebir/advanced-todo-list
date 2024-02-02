@@ -1,12 +1,21 @@
+import { useContext, useEffect } from "react";
+import userDataContext from "../../../contexts/userDataContext";
+import { loggedInUser } from "../../../userData";
+import toDoTasksContext from "../../../contexts/toDoTasksContext";
+import SubmissionTimer from "./SubmissionTimer";
+
 const ProfileHeader = () => {
+    const { selectedProfile, profiles } = useContext(toDoTasksContext);
+
     return (
         <header>
-            <img src="https://cdn2.iconfinder.com/data/icons/user-people-4/48/6-512.png" alt="profile-picture" />
+            <img src={localStorage.getItem('profiles') == null ? "#" : profiles[loggedInUser()].profileImage} alt="profile-picture" />
             <div id="profile-info">
-                <h1>Dummy profile name</h1>
+                <h1>{localStorage.getItem('profiles') == null ? "profile name" : profiles[loggedInUser()].profileName}</h1>
                 <div id="profile-id">#0012</div>
-                <button type="button">Profile settings</button>
+                <button id='profile-settings' type="button">Profile settings</button>
             </div>
+            <SubmissionTimer></SubmissionTimer>
         </header>
     )
 }

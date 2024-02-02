@@ -14,10 +14,11 @@ section>header>img {
 
 #profile-section-container>section>header {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 #profile-info {
@@ -45,13 +46,23 @@ section>header>img {
 
 #profile-section-buttons {
     display: flex;
-    justify-content: start;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
 #profile-section-buttons>button {
     border-radius: 1rem;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-width: 190px;
+}
+
+#profile-settings {
+    border: none;
+    border-radius: 0.4rem;
+    color: #3B4242;
+    padding-block: 0.3rem;
     font-weight: bold;
 }

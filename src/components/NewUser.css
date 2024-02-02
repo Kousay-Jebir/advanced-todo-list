@@ -1,0 +1,67 @@
+#new-user-ui-container {
+    background-color: #212323;
+    padding: 0.1rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+#new-user-ui {
+    border: 1px solid #6b7271;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #303a3a;
+}
+
+#new-user-ui img {
+    display: block;
+    width: 100px;
+    border-radius: 1.5rem;
+    aspect-ratio: 1;
+}
+
+#new-user-ui input {
+    background: none;
+    outline: none;
+    border: none;
+    color: #CBE4DE;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#new-user-ui input::placeholder {
+    color: #CBE4DE;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#new-user-ui button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    width: auto;
+    background: #CBE4DE;
+    color: #424B4B;
+    margin: 0;
+    margin-bottom: 0.8rem;
+}
+
+#new-user-ui button {
+    font-size: 1rem;
+    width: auto;
+    background: #CBE4DE;
+    color: #424B4B;
+    margin: 0;
+    margin-bottom: 0.8rem;
+    width: 9.7rem;
+}
+
+#new-user-ui button[type="submit"] {
+    color: #CBE4DE;
+    background-color: #0E8388;
+}

@@ -1,6 +1,7 @@
 form {
     padding: 2rem;
-    max-width: 500px;
+    min-width: 250px;
+    min-width: 26rem;
 }
 
 button {
@@ -16,6 +17,7 @@ form>button {
     width: 100%;
     margin: 2rem 0;
 }
+
 
 form button:nth-child(2) {
     background-color: #0E8388;
